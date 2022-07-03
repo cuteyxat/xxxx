@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+
+<div id="skill-body" class="ui-widget-content">
+
+  
+  <div id="power-button"  >
+    <div class="power-button-center" type="button" value="On" id="onoff" onclick="onoff();">
+      <img id="power-button-image" onclick="changeImage()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343880/powerButtonRed.png" width="40" height="40">  
+    </div>
+    <h4 id="pwr">P<span style="color:goldenrod;  font-size: 30px; font-family:'Megrim', cursive;">W</span>R</h4>
+  </div>
+   
+<!--  <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-off"></span> Off 
+        </button> -->
+
+  <ol class="skill-bar" >
+  <h3>Test xat Profile</h3>
+    <p>Health</p>
+    <li class="skill-num" class="ui-widget-content">
+      <ul class="skill-health"></ul>
+    </li>
+    <p>Mana</p>
+    <li class="skill-num" class="ui-widget-content">
+      <ul class="skill-mana"></ul>
+    </li>
+    <p>Stamina</p>
+    <li class="skill-num" class="ui-widget-content">
+      <ul class="skill-stamina"></ul>
+    </li>
+    <p>Damage</p>
+    <li class="skill-num" class="ui-widget-content">
+      <ul class="skill-damage"></ul>
+    </li>
+<!--   MOVE ZONE -->
+  <div class="move-zone">Move</div>
+  </ol>
+  
+
+</div>
+
+ 
+		  <title>Test XAT Profile</title>
+           <style>
+		  body {
+  background-color: grey;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/002/397/481/large/tariq-munir-cyberpunk-interior-concept-final-00-logo-210416.jpg?1461251337");
+  background-size: 100% 260%;
+  background-repeat: no-repeat;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+}
+
+li {
+  list-style: none;
+}
+h3 {
+  position: relative;
+  left: 40%;
+  top: 20px;
+  width: 40px;
+  border: 2px solid transparent;
+  border-left-color: rgba(0, 188, 212, 0.54);
+  border-right-color: rgba(0, 188, 212, 0.54);
+  color: rgba(0, 188, 212, 0.54);
+  font-family: 'Orbitron', sans-serif;
+  filter: blur(1px);
+
+  animation: typing 3s infinite;
+  overflow: hidden;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-animation: typing 3s;
+}
+
+/* Safari 4.0 - 4.0 */
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+}
+
+h4 {
+  color: rgba(0, 188, 212, 0.54);
+  font-family: 'Orbitron', sans-serif;
+  filter: blur(1px);
+}
+
+span {
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 2s;
+  -webkit-transition-timing-function: linear;
+
+  /* Standard syntax */
+  transition-property: color;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+
+#skill-body {
+  background-color: rgba(31, 38, 57, 0.75);
+  left: 280px;
+  top: 0 px;
+  bottom: -50px;
+}
+
+.ui-widget-content {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 700px;
+}
+
+#power-button {
+  position: absolute;
+  color: #1e9bbb;
+  width: 40px;
+  left: 33px;
+  top: 10px;
+  height: 40px;
+  box-shadow: 0 0 9px 0px #ff0000;
+  border: 6px inset #126277;
+  border-radius: 100%;
+  opacity: .6;
+  z-index: 100;
+}
+
+#power-button:hover, .power-button-center:hover {
+  box-shadow: 0 0 9px 0px goldenrod;
+}
+
+#power-button, .power-button-center {
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition-property: box-shadow;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+
+  /* Standard syntax */
+  transition-property: box-shadow;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.power-button-center {
+  position: absolute;
+  color: #1e9bbb;
+  width: 20px;
+  left: 4px;
+  top: 4px;
+  height: 20px;
+  background: #252739;
+  box-shadow: 0 0 9px 0px #ff0000;
+  border: 6px inset #126277;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+#pwr {
+  position: absolute;
+  left: 70px;
+  top: 0px;
+  width: 55px;
+}
+
+#power-button-image {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  left: 0px;
+  top: 0px;
+  opacity: .5;
+}
+
+.skill-bar {
+  position: relative;
+  min-height: 353px;
+  width: 95%;
+  font-family: 'orbitron', cursive;
+  color: rgba(0, 188, 212, 0.54);
+}
+
+.skill-num {
+  position: relative;
+  height: 25px;
+  width: 90%;
+  background-color: rgba(128, 128, 128, 0.32);
+  border-radius: 6px;
+  left: 0;
+  top: 5px;
+  z-index: 100;
+}
+p {
+  position: relative;
+  top: 15px;
+}
+
+.skill-health, .skill-mana, .skill-stamina, .skill-damage {
+  position: absolute;
+  top: 0;
+  height: 25px;
+  width: 0;
+
+  border-radius: 5px;
+  left: 0px;
+  z-index: 5;
+
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition-property: width;
+  -webkit-transition-duration: 2s;
+  -webkit-transition-timing-function: linear;
+
+  /* Standard syntax */
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.skill-health {
+  background: rgba(
+    0,
+    128,
+    0,
+    0.65
+  ); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(0, 128, 0, 0.65);,
+    rgba(0, 188, 212, 0.54)
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    rgba(0, 128, 0, 0.65),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    rgba(0, 128, 0, 0.65),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(
+    91deg,
+    rgba(0, 128, 0, 0.65),
+    rgba(0, 188, 212, 0.54)
+  );
+  background-size: 150% 5%;
+
+  -webkit-animation: AnimationName 5.5s ease infinite;
+  -moz-animation: AnimationName 5.5s ease infinite;
+  animation: AnimationName 5.5s ease infinite;
+
+  /* Standard syntax */
+  box-shadow: 0 0 10px 4px rgba(255, 69, 0, 0.39);
+  filter: blur(10px);
+}
+
+.skill-mana {
+  background: rgba(
+    110,
+    0,
+    255,
+    0.7
+  ); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(110, 0, 255, 0.7),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    rgba(110, 0, 255, 0.7),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    rgba(110, 0, 255, 0.7),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(
+    91deg,
+    rgba(110, 0, 255, 0.7),
+    rgba(0, 188, 212, 0.54)
+  );
+  background-size: 150% 5%;
+
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+
+  box-shadow: 0 0 10px 4px rgba(255, 69, 0, 0.39);
+  filter: blur(10px);
+}
+
+.skill-stamina {
+  background: rgba(
+    255,
+    165,
+    0,
+    0.58
+  ); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 165, 0, 0.58),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    rgba(255, 165, 0, 0.58),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    rgba(255, 165, 0, 0.58),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(91deg, #ffa500, #00bcd4);
+  background-size: 150% 5%;
+
+  -webkit-animation: AnimationName 2s ease infinite;
+  -moz-animation: AnimationName 2s ease infinite;
+  animation: AnimationName 2s ease infinite;
+
+  box-shadow: 0 0 10px 4px rgba(255, 69, 0, 0.39);
+  filter: blur(10px);
+}
+.skill-damage {
+  background: rgba(
+    255,
+    69,
+    0,
+    0.39
+  ); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 69, 0, 0.39),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    rgba(255, 69, 0, 0.39),
+    rgba(0, 188, 212, 0.54)
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    rgba(255, 69, 0, 0.39),
+    rgba(0, 188, 212, 0.54)
+  );
+
+  box-shadow: 0 0 10px 4px rgba(255, 69, 0, 0.39);
+  filter: blur(10px);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(91deg, #ff4500, #00bcd4);
+  background-size: 150% 5%;
+
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.move-zone {
+  color: rgba(127, 174, 36, 0.62);
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  font-size: 14px;
+  left: 90.5%;
+  top: 20px;
+  border: 2px solid white;
+  border-left-color: rgba(127, 174, 36, 0.62);
+  border-right-color: transparent;
+  border-top-color: rgba(127, 174, 36, 0.62);
+  border-bottom-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  width: 47px;
+  -webkit-transition-property: color, border;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+  transition-property: color, border;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.move-zone:hover {
+  border-left-color: rgb(16, 103, 126);
+  border-top-color: rgb(16, 103, 126);
+
+  color: rgb(16, 103, 126);
+}
+
+</style>
+
+<script>
+function onoff() {
+  currentvalue = document.getElementById("onoff").value;
+  if (currentvalue == "Off") {
+    document.getElementById("onoff").value = "On";
+
+    //     STANDBY COLOR SET AFTER 3 SECONDS
+    setTimeout(function() {
+      $("span").css({ color: "goldenrod" });
+    }, 3000);
+
+    $("span").css({ color: "orangered" });
+    $(".skill-health").css({ width: " 0" });
+    $(".skill-mana").css({ width: " 0" });
+    $(".skill-stamina").css({ width: " 0" });
+    $(".skill-damage").css({ width: " 0" });
+    $("#power-button, .power-button-center").css({ boxShadow: " 0 0 9px red" });
+
+    console.log("off");
+  } else {
+    document.getElementById("onoff").value = "Off";
+    $("span").css({ color: "green" });
+    $(".skill-health").css({ width: " 88%" });
+    $(".skill-mana").css({ width: " 71%" });
+    $(".skill-stamina").css({ width: " 26%" });
+    $(".skill-damage").css({ width: " 63%" });
+    $("#power-button, .power-button-center").css({
+      boxShadow: " 0 0 9px green"
+    });
+    console.log("on");
+  }
+}
+
+function changeImage() {
+  var image = document.getElementById("power-button-image");
+  if (image.src.match("powerButtonGreen")) {
+    image.src =
+      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/343880/powerButtonRed.png";
+  } else {
+    image.src =
+      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/343880/powerButtonGreen.png";
+  }
+}
+
+$(document).ready(function() {
+  //   This allows the container to be draggable.
+  $("#skill-body").draggable();
+});
+
+</script>
